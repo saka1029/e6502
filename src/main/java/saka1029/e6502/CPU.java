@@ -36,8 +36,8 @@ public class CPU {
     }
     
     public void bytes(int address, int... values) {
-    	for (int v : values)
-    		byte1(address++, (byte)v);
+            for (int v : values)
+                byte1(address++, (byte)v);
     }
     
     public boolean s(int bit) {
