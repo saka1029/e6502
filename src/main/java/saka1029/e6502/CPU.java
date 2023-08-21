@@ -35,6 +35,11 @@ public class CPU {
         byte1(address + 1, (byte)(value >> 8));
     }
     
+    public void bytes(int address, int... values) {
+    	for (int v : values)
+    		byte1(address++, (byte)v);
+    }
+    
     public boolean s(int bit) {
         return (s & bit) != 0;
     }

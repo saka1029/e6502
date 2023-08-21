@@ -33,5 +33,14 @@ public class TestCPU {
         assertTrue(cpu.s(CPU.N));
         assertTrue(cpu.s(CPU.C));
     }
+    
+    @Test
+    public void testBytes() {
+    	assertEquals((byte)-4, -4);
+    	CPU cpu = new CPU();
+    	cpu.bytes(0x4000, -4, -3, -2, 0xFF, 0, 1, 2, 3, 4);
+    	for (int i = -4, a = 0x4000; i < 5; ++i, ++a)
+    		assertEquals((byte)i, cpu.byte1(a));
+    }
 
 }
