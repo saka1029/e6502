@@ -43,7 +43,7 @@ public class TestCPU {
         cpu.bytes(0x4000, -4, -3, -2, -1, 0, 1, 2, 3, 4);
         for (int i = -4, a = 0x4000; i < 5; ++i, ++a)
             assertEquals((byte) i, cpu.byte1(a));
-        assertEquals("fcfdfeff0001020304", HexFormat.of().formatHex(cpu.memory, 0x4000, 0x4009));
+        assertEquals("FC FD FE FF 00 01 02 03 04", HexFormat.ofDelimiter(" ").withUpperCase().formatHex(cpu.memory, 0x4000, 0x4009));
     }
 
 }
